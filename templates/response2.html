@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgb(17, 15, 15), rgb(7, 5, 2)) fixed;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .shape {
+            animation: move 6s infinite linear;
+        }
+
+
+        .shape:nth-child(1) {
+            background: linear-gradient(#18ad45,
+                    #23a2f6);
+            left: -50%;
+            top: -15%;
+            animation-delay: -1s;
+        }
+
+        .shape:nth-child(2) {
+            background: linear-gradient(#61d79a,
+                    #19f0da);
+            left: 115%;
+            top: 80%;
+            animation-delay: -2s;
+        }
+
+        .shape:nth-child(3) {
+            background: linear-gradient(#dc8bd2,
+                    #19b7f0);
+            left: 135%;
+            top: -75%;
+            animation-delay: -3s;
+        }
+
+        .shape:nth-child(4) {
+            background: linear-gradient(#a365d5,
+                    #df77c8);
+            left: -70%;
+            top: -40%;
+            animation-delay: -4s;
+        }
+
+        .shape:nth-child(5) {
+            background: linear-gradient(#1ded69,
+                    #61d79a);
+            left: 20%;
+            top: 20%;
+            animation-delay: -5s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate(0deg) translateX(10px) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(10px) rotate(-360deg) scale(1);
+            }
+        }
+
+        #title {
+            margin: 5%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+
+        .mid {
+            font-size:25px;
+            height: auto;
+            width: 40vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            top:30%;
+            left:0;
+            right:0;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px;
+        }
+        ul{
+            text-align: left;
+        }
+        .box{
+            display:flex;
+        }
+        img{
+            width:80%;
+            margin-top:30px;
+        }
+        figcaption{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="mid">
+        <figure>
+            <img src = "static/tmp/{{result[6]}}.png">
+            <figcaption>Combined</figcaption>
+        </figure>
+        <div class="box">
+            <figure>
+                <a href="static/tmp/subparts/bone.png" target="_blank"><img src = "static/tmp/subparts/bone.png"></a>
+                <figcaption>Bone</figcaption>
+            </figure>
+            <figure>
+                <a href="static/tmp/subparts/subdural.png" target="_blank"><img src = "static/tmp/subparts/subdural.png"></a>
+                <figcaption>Subdural</figcaption>
+            </figure>
+            <figure>
+                <a href="static/tmp/subparts/brain.png" target="_blank"><img src = "static/tmp/subparts/brain.png"></a>
+                <figcaption>Brain</figcaption>
+            </figure>
+        </div>
+        <br><br>
+        You have <b>{{"%.2f"%(result[0][1]*100)}}% </b>chance of getting a brain stroke.
+        <br><br>
+        Risks in different types of haemorrhage are:<br><br>
+        <ul>
+        {% for i in result[1:6] %}
+            <li>{{i[0]}}   :    {{"%.2f"%(i[1]*100)}}%</li>
+        {% endfor %}
+        </ul>
+        
+    </div>
+    
+</body>
+
+</html>

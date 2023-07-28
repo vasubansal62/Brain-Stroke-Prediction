@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(white, rgb(155, 235, 235)) fixed;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .shape {
+            animation: move 6s infinite linear;
+        }
+
+
+        .shape:nth-child(1) {
+            background: linear-gradient(#18ad45,
+                    #23a2f6);
+            left: -50%;
+            top: -15%;
+            animation-delay: 1s;
+        }
+
+        .shape:nth-child(2) {
+            background: linear-gradient(#61d79a,
+                    #19f0da);
+            left: 115%;
+            top: 80%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            background: linear-gradient(#dc8bd2,
+                    #19b7f0);
+            left: 135%;
+            top: -75%;
+            animation-delay: 3s;
+        }
+
+        .shape:nth-child(4) {
+            background: linear-gradient(#a365d5,
+                    #df77c8);
+            left: -70%;
+            top: -40%;
+            animation-delay: 4s;
+        }
+
+        .shape:nth-child(5) {
+            background: linear-gradient(#1ded69,
+                    #61d79a);
+            left: 20%;
+            top: 20%;
+            animation-delay: 5s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate(0deg) translateX(10px) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(10px) rotate(-360deg) scale(1);
+            }
+        }
+
+        #title {
+            margin: 5%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        form {
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 5%;
+
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        .mid {
+            font-family: 'Poppins', sans-serif;
+            font-size:25px;
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        p {
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        .button {
+            position: relative;
+            width:auto;
+            margin: auto;
+            text-align: center;
+            background-color: #ffffff;
+            color: #080710;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .button:hover {
+            font-size: 20px;
+            background-color: #23a2f6;
+            color: orange;
+            backdrop-filter: blur(1px);
+
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+
+        .file-upload {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .file-upload .file-upload-select {
+            display: block;
+            color: #dbdbdb;
+            cursor: pointer;
+            text-align: left;
+            font-size: 20px;
+            background: #1a242f;
+            overflow: hidden;
+            position: relative;
+            border-radius: 6px;
+            margin: 20px;
+        }
+
+        .file-upload .file-upload-select .file-select-button {
+            background: #161f27;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .file-upload .file-upload-select .file-select-name {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .file-upload .file-upload-select:hover .file-select-button {
+            background: #324759;
+            color: #ffffff;
+            transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+        }
+
+        .file-upload .file-upload-select input[type="file"] {
+            display: none;
+        }
+
+        input[type="submit"] {
+            font-size: 20px;
+            /* padding: 10%; */
+            /* border: 1px solid black; */ 
+            border-radius: 5px;
+            background: transparent;
+        }
+        input[type="submit"]:hover{
+            cursor: pointer;
+            color: white;
+        } 
+        
+        .inform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        p{
+            font-size:25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="mid">
+        {% if result[0]==0 %}
+        The model predicts that you <b>do not have much risk</b> of having a Brain Stroke. If you still wish to confirm,
+        you may upload your CT scan down below
+        {% else %}
+        You have <b>HIGH RISK</b> of having Brain Stroke. You are <b>highly advised</b> to upload a picture of your CT scan to further confirm if you have chances of getting a stroke.
+        {% endif %}
+    </div>
+    <form method="POST" action="/predct" enctype="multipart/form-data">
+        <div class="inform">
+            <p>Upload your CT scan in order to check if you have brain stroke or not.</p>
+            <div class="file-upload">
+                <div class="file-upload-select">
+                    <div class="file-select-button">Choose File</div>
+                    <div class="file-select-name">No file chosen...</div>
+                    <input type="file" name="file" id="file-upload-input">
+                </div>
+                
+            </div>
+            <div class="button">
+                <input type="submit" value="Upload">
+            </div>
+        </div>
+    </form>
+
+    </div>
+    <script>
+
+        let fileInput = document.getElementById("file-upload-input");
+        let fileSelect = document.getElementsByClassName("file-upload-select")[0];
+        fileSelect.onclick = function () {
+            fileInput.click();
+        }
+        fileInput.onchange = function () {
+            let filename = fileInput.files[0].name;
+            let selectName = document.getElementsByClassName("file-select-name")[0];
+            selectName.innerText = filename;
+        }
+    </script>
+</body>
+
+</html>

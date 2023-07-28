@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(#141e30, #243b55) fixed;
+        }
+
+        #title {
+            margin: 5%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+
+        .mid {
+            font-size: 25px;
+            height: auto;
+            width: 40vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            top: 10%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px;
+        }
+
+        ul {
+            text-align: left;
+        }
+
+        .box {
+            display: flex;
+        }
+
+        img {
+            width: 80%;
+            margin-top: 30px;
+            border: 1px solid white;
+            border-radius: 5%;
+        }
+
+        figcaption {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+        }
+
+
+        * {
+            color: white;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mid">
+        <div class="box">
+            <figure>
+                <img class="imgs" src="{{ url_for('static', path='/noidea/newfile.png') }}">
+                <figcaption id="caption">Uploaded CT</figcaption>
+            </figure>
+        </div>
+        <br><br>
+        <p>{% if result[0][1] > 0.75 %}
+            You have <span style="color:red">HIGH RISK</span> of getting a <strong>Brain Stroke</strong>. You are advised to visit
+            the nearest hospital immediately to get further insights from a trusted doctor. Take care.
+            {% else %}
+            You have <span style="color:rgb(21, 207, 217)">LOW RISK</span> of getting a brain stroke. If you still think you have a brain stroke, please consult a
+            trusted doctor.
+            {% endif %}
+        </p>
+        <br><br>
+        <ul>
+            {% for i in result[1:6] %}
+            <li>{{i[0]}} : {{"%.2f"%(i[1]*100)}}%</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <script>
+        const img = document.getElementById("mainimg");
+        let sorc = img.src;
+        const cap = document.getElementById("caption");
+        img.addEventListener("mouseover", (event) => {
+            sorc = event.target.src
+            img.src = "/static/tmp/subparts/original.png";
+            cap.innerHTML = "Original";
+        })
+        img.addEventListener("mouseleave", () => {
+            img.src = sorc;
+            let arr = sorc.split("/")
+            let str = arr[arr.length - 1].split(".")[0]
+            str = str.charAt(0).toUpperCase() + str.slice(1)
+            cap.innerHTML = str
+        })
+        var elements = document.querySelectorAll(".imgs");
+        console.log(elements)
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("click", (event) => {
+                let x = event.target.src;
+                img.src = x
+                let arr = x.split("/")
+                let str = arr[arr.length - 1].split(".")[0]
+                str = str.charAt(0).toUpperCase() + str.slice(1)
+                cap.innerHTML = str
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

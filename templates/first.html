@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Prediction</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgb(155, 235, 235), white) fixed;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .shape {
+            animation: move 6s infinite linear;
+        }
+
+
+        .shape:nth-child(1) {
+            background: linear-gradient(#18ad45,
+                    #23a2f6);
+            left: -50%;
+            top: -15%;
+            animation-delay: -1s;
+        }
+
+        .shape:nth-child(2) {
+            background: linear-gradient(#61d79a,
+                    #19f0da);
+            left: 115%;
+            top: 80%;
+            animation-delay: -2s;
+        }
+
+        .shape:nth-child(3) {
+            background: linear-gradient(#dc8bd2,
+                    #19b7f0);
+            left: 135%;
+            top: -75%;
+            animation-delay: -3s;
+        }
+
+        .shape:nth-child(4) {
+            background: linear-gradient(#a365d5,
+                    #df77c8);
+            left: -70%;
+            top: -40%;
+            animation-delay: -4s;
+        }
+
+        .shape:nth-child(5) {
+            background: linear-gradient(#1ded69,
+                    #61d79a);
+            left: 20%;
+            top: 20%;
+            animation-delay: -5s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate(0deg) translateX(10px) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(10px) rotate(-360deg) scale(1);
+            }
+        }
+
+        #title {
+            margin: 5%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        form {
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 5%;
+
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        .mid {
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        p {
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        button {
+            position: relative;
+            transform: translate(-50%, -50%);
+            top: 80%;
+            left: 50%;
+            width: 20%;
+            margin-top: 65px;
+            background-color: #ffffff;
+            color: #080710;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            font-size: 20px;
+            background-color: #23a2f6;
+            color: white;
+            backdrop-filter: blur(1px);
+
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 60%;
+            background-color: lightgrey;
+            border-radius: 3px;
+            backdrop-filter: blur(10px);
+            padding: 0 10px;
+            margin: auto;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+
+        input[type=submit]:hover {
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 3px;
+            cursor: pointx1er;
+            font-family: 'Poppins';
+        }
+
+        .mtt {
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+        .mtt select{
+            display: block;
+            height: 50px;
+            width: 60%;
+            background-color: lightgrey;
+            border-radius: 3px;
+            backdrop-filter: blur(10px);
+            padding: 0 10px;
+            margin: auto;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        p{
+            text-align: center;
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="mid">
+        Brain Stroke Prediction
+    </div>
+    <form action="/predict" method="post">
+        <div class="mtt">
+            <p>Gender</p>
+            <select name="gender" id="gen">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+            <p>Age</p>
+            <input type="number" name="age" id="age" placeholder="Age">
+            <p>Hypertension</p>
+            <select name="hypertension" id="ht">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <p>Heart Disease</p>
+            <select name="heart_disease" id="hd">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            
+            <p>Married?</p>
+            <select name="ever_married" id="em">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            
+            <p>Work Type</p>
+            <select name="work_type" id="wt">
+                <option value="0">Private</option>
+                <option value="1">Self Employed</option>
+                <option value="2">Government Job</option>
+                <option value="3">Never Worked</option>
+            </select>
+            
+            <p>Residence Type</p>
+            <select name="Residence_type" id="rt">
+                <option value="0">Rural</option>
+                <option value="1">Urban</option>
+            </select>
+            <p>Smoking Status</p>
+            <select name="smoking_status" id="ss">
+                <option value="1">Never Smoked</option>
+                <option value="0">Formerly Smoked</option>
+                <option value="2">Smokes Regularly</option>
+            </select>
+            <!-- <input type="text" name="gender" id="gen" placeholder="Gender">
+            <input type="text" name="age" id="age" placeholder="Age">
+            <input type="text" name="hypertension" id="ht" placeholder="Hypertension">
+            <input type="text" name="heart_disease" id="hd" placeholder="Heart Disease">
+            <input type="text" name="ever_married" id="em" placeholder="Ever Married">
+            <input type="text" name="work_type" id="wt" placeholder="Work Type">
+            <input type="text" name="Residence_type" id="rt" placeholder="Residence Type">
+            <input type="text" name="smoking_status" id="ss" placeholder="Smoking Status"> -->
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- <form method="POST" action="/predct" enctype="multipart/form-data">
+            <div class="file-upload">
+                <div class="file-upload-select">
+                    <div class="file-select-button">Choose File</div>
+                    <div class="file-select-name">No file chosen...</div>
+                    <input type="file" name="file" id="file-upload-input">
+                </div>
+                <div>
+                    <input type="submit" value="Upload">
+                </div>
+            </div>
+        </form> -->
+    <script>
+
+    </script>
+
+</body>
+
+</html>

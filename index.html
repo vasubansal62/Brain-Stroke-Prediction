@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Prediction</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            border-radius: 50%;
+        }
+        .shape{
+            animation: move 6s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            background: linear-gradient(#18ad45,
+                    #23a2f6);
+            left: -50%;
+            top: -15%;
+            animation-delay: 1s;
+        }
+
+        .shape:nth-child(2) {
+            background: linear-gradient(#61d79a,
+                    #19f0da);
+            left: 115%;
+            top: 80%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            background: linear-gradient(#dc8bd2,
+                    #19b7f0);
+            left: 135%;
+            top: -75%;
+            animation-delay: 3s;
+        }
+
+        .shape:nth-child(4) {
+            background: linear-gradient(#a365d5,
+                    #df77c8);
+            left: -70%;
+            top: -40%;
+            animation-delay: 4s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate(0deg) translateX(10px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(10px) rotate(-360deg);
+            }
+        }
+
+        #title {
+            margin: 5%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        form {
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 5%;
+
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        .mid {
+            height: auto;
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        p {
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        button {
+            position: relative;
+            transform: translate(-50%, -50%);
+            top: 80%;
+            left: 50%;
+            width: 20%;
+            margin-top: 65px;
+            background-color: #ffffff;
+            color: #080710;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        button:hover {
+            font-size: 20px;
+            background-color: #23a2f6;
+            color: white;
+            backdrop-filter: blur(1px);
+
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 60%;
+            background-color: lightgrey;
+            border-radius: 3px;
+            backdrop-filter: blur(10px);
+            padding: 0 10px;
+            margin: auto;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+
+        input[type=submit]:hover {
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 3px;
+            cursor: pointx1er;
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="mid">
+        Hey, this is the topic!
+
+    </div>
+        <input type="text" name="" id="gen" placeholder="Gender">
+        <input type="text" name="" id="age" placeholder="Age">
+        <input type="text" name="" id="ht" placeholder="Hypertension">
+        <input type="text" name="" id="hd" placeholder="Heart Disease">
+        <input type="text" name="" id="em" placeholder="Ever Married">
+        <input type="text" name="" id="wt" placeholder="Work Type">
+        <input type="text" name="" id="rt" placeholder="Residence Type">
+        <input type="text" name="" id="ss" placeholder="Smoking Status">
+        <button onclick="callml()">Submit</button>
+
+        <form method="POST" action="/predct" enctype="multipart/form-data">
+            <div class="file-upload">
+                <div class="file-upload-select">
+                    <div class="file-select-button">Choose File</div>
+                    <div class="file-select-name">No file chosen...</div>
+                    <input type="file" name="file" id="file-upload-input">
+                </div>
+                <div>
+                    <input type="submit" value="Upload">
+                </div>
+            </div>
+        </form>
+    <script>
+
+        const callml = async () => {
+            const res = await fetch("/predict", {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    gender: document.getElementById("gen").value,
+                    age: document.getElementById("age").value,
+                    hypertension: document.getElementById("ht").value,
+                    heart_disease: document.getElementById("hd").value,
+                    ever_married: document.getElementById("em").value,
+                    work_type: document.getElementById("wt").value,
+                    residence_type: document.getElementById("rt").value,
+                    smoke_status: document.getElementById("ss").value,
+
+                }),
+                method: "POST"
+
+            })
+            const data = await res.text();
+            document.body.appendChild(document.createTextNode(data))
+
+        }
+
+        const callct = async () => {
+            const res = await fetch("/predct", {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+
+                }),
+                method: "POST"
+            })
+            const newdata = await res.text();
+        }
+    </script>
+
+</body>
+
+</html>
